@@ -15,17 +15,24 @@ var followers_options = {
 
 var data = {};
 
-console.log(getFollowers());
+getFollowersData();
 
-function getFollowers() {
+function getFollowersData() {
     request(followers_options, function (error, response, body) {
         if (error) return console.log(error, "Couldn't find page!");
         if (!error && response.statusCode == 200) {
-            data.html = body;
-            return console.log(body);
+            data.body = body;
+            return console.log(getFollowers(body));
         }
         if (!error) return console.log(error, 
                                        "Oh no! Something went wrong, status code: " 
                                        + response.statusCode + " , tried " + followers_url);
     });
+}
+
+function getFollowers(inData) {
+    var jsonData = JSON.parse(inData);
+
+    var outData = jsonData[0].login;
+    return outData;
 }
