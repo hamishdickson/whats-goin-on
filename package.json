@@ -1,0 +1,36 @@
+{
+    "name": "whats-goin-on",
+    "version": "0.0.1",
+    "description": "See what your friends are up to on github",
+    "main": "index.js",
+    "bin": {
+        "whats-goin-on": "index.js"
+    },
+    "scripts": {
+        "test": "node test/test.js"
+    },
+    "author": "Hamish Dickson",
+    "licence": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hamishdickson/whats-goin-on.git"
+    },
+    "bugs": {
+        "url": "https://github.com/hamishdickson/whats-goin-on/issues"
+    },
+    "keywords": [
+        "contibution",
+        "github",
+        "open source",
+        "graph"
+    ],
+    "dependencies": {
+        "cheerio": "~0.17.0",
+        "request": "~2.45.0",
+        "minimist": "~1.1.0",
+        "strftime": "~0.8.2"
+    },
+    "devDependencies": {
+        "tape": "~3.0.1"
+    }
+}
