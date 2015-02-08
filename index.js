@@ -15,14 +15,17 @@ var followers_options = {
 
 var data = {};
 
-request(followers_options, function (error, response, body) {
-    if (error) return console.log(error, "Couldn't find page!");
-    if (!error && response.statusCode == 200) {
-        data.html = body;
-        return console.log(JSON.stringify(body));
-    }
-    if (!error) return console.log(error, "something went wrong, status code: " + response.statusCode + " , tried " + followers_url);
-});
+console.log(getFollowers());
 
-
-console.log("output");
+function getFollowers() {
+    request(followers_options, function (error, response, body) {
+        if (error) return console.log(error, "Couldn't find page!");
+        if (!error && response.statusCode == 200) {
+            data.html = body;
+            return console.log(body);
+        }
+        if (!error) return console.log(error, 
+                                       "Oh no! Something went wrong, status code: " 
+                                       + response.statusCode + " , tried " + followers_url);
+    });
+}
