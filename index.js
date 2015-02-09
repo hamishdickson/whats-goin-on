@@ -16,20 +16,20 @@ var followers_options = {
     headers: HEADERS
 };
 
-var starred_options = {
-    url: 'https://api.github.com/users/' + username + '/starred',
+var events_options = {
+    url: 'https://api.github.com/users/' + username + '/received_events',
     headers: HEADERS
 };
 
 var data = {};
 
-getFollowersData();
+getEventsData();
 
-function getFollowersData() {
-    request(followers_options, function (error, response, body) {
+function getEventsData() {
+    request(events_options, function (error, response, body) {
         if (error) return console.log(error, "Couldn't find page!");
         if (!error && response.statusCode == 200) {
-            return console.log(getFollowers(body));
+            return console.log(getEvents(body));
         }
         if (!error) return console.log(error, 
                                        "Oh no! Something went wrong, status code: " 
@@ -37,12 +37,12 @@ function getFollowersData() {
     });
 }
 
-function getFollowers(inData) {
+function getEvents(inData) {
     var jsonData = JSON.parse(inData);
     var outData = {};
 
     for (var i = 0; i < jsonData.length; i++) {
-        outData[i] = jsonData[i].login;
+        outData[i] = jsonData[i].actor.login;
     }
     
     return outData;
