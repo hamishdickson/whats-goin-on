@@ -10,7 +10,7 @@ Please note: Right now, this is in development - I am likely to break it at any 
 
 _Requires [Node.js](http://www.nodejs.org)_
 ```bash
-$ npm install -g gardening
+$ npm install -g whats-goin-on
 ```
 
 ### To use
@@ -19,6 +19,10 @@ $ npm install -g gardening
 # for today
 $ whats-goin-on [githubusername]
 ```
+
+### Thanks
+
+While this does something totally different, I came up with this idea after seeing [jlord's](https://github.com/jlord) gardening repo. Check it out.
 
 ---
 
