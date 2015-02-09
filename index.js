@@ -44,7 +44,6 @@ function getEvents(inData) {
         "data": []
     };
 
-    // make sure nothing crazy happens
     if (jsonData.length < numberOfRecords) numberOfRecords = jsonData.length;
 
     for (var i = 0; i < numberOfRecords; i++) {
@@ -59,12 +58,15 @@ function getEvents(inData) {
     return makeItPretty(outData);
 }
 
-// todo pretty up the time
 function makeItPretty(ugly) {
     var outString = "";
 
     for (var j = 0; j < ugly.data.length; j++) {
-        outString = outString + "---\n" + ugly.data[j].time + "\t" + ugly.data[j].login + " did a " + ugly.data[j].event + " for repo " + ugly.data[j].repo + "\n";
+        outString = outString + "---\n" 
+            + ugly.data[j].time 
+            + "\t" + ugly.data[j].login 
+            + " did a " + ugly.data[j].event 
+            + " for repo " + ugly.data[j].repo + "\n";
     }
 
     return outString;
