@@ -36,7 +36,11 @@ function getEvents(inData) {
     var outData = {};
 
     for (var i = 0; i < jsonData.length; i++) {
-        outData[i] = jsonData[i].actor.login;
+        outData[i] = {
+            "login": jsonData[i].actor.login,
+            "event": jsonData[i].type.replace('Event', ''),
+            "repo": jsonData[i].repo.name
+        };
     }
     
     return outData;
