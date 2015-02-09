@@ -16,7 +16,10 @@ $ npm install -g whats-goin-on
 ### To use
 
 ```bash
+# by default this will return up to 10 lines
 $ whats-goin-on [githubusername]
+# you can increase the number of lines with -n, for example this will return 4 lines
+$ whats-goin-on [githubusername] -n 4
 ```
 
 ### Thanks
