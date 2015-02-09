@@ -22,7 +22,3 @@ $ whats-goin-on [githubusername]
 ### Thanks
 
 While this does something totally different, I came up with this idea after seeing [jlord's](https://github.com/jlord) gardening repo. Check it out.
-
----
-
-This is a very basic tool, but it's fun to write these things!
