@@ -16,7 +16,6 @@ $ npm install -g whats-goin-on
 ### To use
 
 ```bash
-# for today
 $ whats-goin-on [githubusername]
 ```
 
