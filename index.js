@@ -10,12 +10,6 @@ var HEADERS = {
         'User-Agent': 'request'
 };
 
-
-var followers_options = {
-    url: 'https://api.github.com/users/' + username + '/followers',
-    headers: HEADERS
-};
-
 var events_options = {
     url: 'https://api.github.com/users/' + username + '/received_events',
     headers: HEADERS
