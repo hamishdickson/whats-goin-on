@@ -24,9 +24,9 @@ var events_options = {
     headers: HEADERS
 };
 
-getEventsData();
+getEventsDataAndOutputToConsole();
 
-function getEventsData() {
+function getEventsDataAndOutputToConsole() {
     request(events_options, function (error, response, body) {
         if (error) return console.log(error, "Couldn't find page!");
         if (!error && response.statusCode == 200) {
@@ -62,7 +62,7 @@ function makeItPretty(ugly) {
     var outString = "";
 
     for (var j = 0; j < ugly.data.length; j++) {
-        outString = outString + "---\n" 
+        outString = outString + "\n" 
             + getSymbol(ugly.data[j].event)
             + "\t" + ugly.data[j].time 
             + "\t" + ugly.data[j].login 
@@ -75,7 +75,7 @@ function makeItPretty(ugly) {
 
 function getSymbol(event) {
     if (event == 'Watch') return '⊙';
-    if (event == 'Push') return '->';
+    if (event == 'Push') return '=>';
     if (event == 'Create') return '+';
     if (event == 'Fork') return '-<';
     return '-';
@@ -87,4 +87,9 @@ function makeGoodEnglish(event) {
     if (event == 'Create') return ' created new repo ';
     if (event == 'Fork') return ' forked ';
     return ' did a ' + event;
+}
+
+function beerGoggles(uglyDate) {
+    var prettyDate = "";
+    return prettyDate;
 }
