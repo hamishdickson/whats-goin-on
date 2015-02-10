@@ -20,11 +20,11 @@ $ npm install -g whats-goin-on
 $ whats-goin-on [githubusername]
 # you can increase the number of lines with -n, for example this will return 4 lines
 $ whats-goin-on [githubusername] -n 4
-   ⊙  3 hours ago  davegurnell is now watching fommil/freeslick
+   ⊙  3 hours ago  aUser is now watching interestingUser/repo
 
-   => 9 hours ago  brendanator pushed to repo jhc-systems/sqlest
+   -< 9 hours ago  iLikeBuildingOnCode forked anotherUser/repo2
 
-   => 10 hours ago brendanator pushed to repo jhc-systems/sqlest
+   +  3 days ago   followMe created new repo followMe/imNeedy
 ```
 
 **Options**

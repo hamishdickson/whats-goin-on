@@ -86,7 +86,7 @@ function makeGoodEnglish(event) {
     if (event == 'Watch') return ' is now watching ';
     if (event == 'Push') return ' pushed to repo ';
     if (event == 'Create') return ' created new repo ';
-    if (event == 'Fork') return ' forked ';
+    if (event == 'Fork') return ' forked repo ';
     return ' did a ' + event;
 }
 
