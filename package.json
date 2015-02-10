@@ -1,6 +1,6 @@
 {
     "name": "whats-goin-on",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "See what your friends are up to on github",
     "main": "index.js",
     "bin": {
