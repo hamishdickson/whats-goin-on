@@ -87,7 +87,10 @@ function makeGoodEnglish(event) {
     if (event == 'Push') return ' pushed to repo ';
     if (event == 'Create') return ' created new repo ';
     if (event == 'Fork') return ' forked repo ';
-    return ' did a ' + event;
+    if (event == 'IssueComment') return ' commented on an issue ';
+    if (event == 'PullRequestReviewComment') return ' commented on a pull request for ';
+    if (event == 'Issue') return ' created a new issue ';
+    return ' did a ' + event + ' event ';
 }
 
 function beerGoggles(uglyDate) {
