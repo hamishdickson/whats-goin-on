@@ -22,6 +22,9 @@ $ whats-goin-on [githubusername]
 $ whats-goin-on [githubusername] -n 4
 ```
 
+**Options**
+- '-n number' returns the last _number_ of items
+
 ### Thanks
 
 While this does something totally different, I came up with this idea after seeing [jlord's](https://github.com/jlord) gardening repo. Check it out.

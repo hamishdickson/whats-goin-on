@@ -63,11 +63,28 @@ function makeItPretty(ugly) {
 
     for (var j = 0; j < ugly.data.length; j++) {
         outString = outString + "---\n" 
-            + ugly.data[j].time 
+            + getSymbol(ugly.data[j].event)
+            + "\t" + ugly.data[j].time 
             + "\t" + ugly.data[j].login 
-            + " did a " + ugly.data[j].event 
-            + " for repo " + ugly.data[j].repo + "\n";
+            + makeGoodEnglish(ugly.data[j].event)
+            + ugly.data[j].repo + "\n";
     }
 
     return outString;
+}
+
+function getSymbol(event) {
+    if (event == 'Watch') return '⊙';
+    if (event == 'Push') return '->';
+    if (event == 'Create') return '+';
+    if (event == 'Fork') return '-<';
+    return '-';
+}
+
+function makeGoodEnglish(event) {
+    if (event == 'Watch') return ' is now watching ';
+    if (event == 'Push') return ' pushed to repo ';
+    if (event == 'Create') return ' created new repo ';
+    if (event == 'Fork') return ' forked ';
+    return ' did a ' + event;
 }
