@@ -2,6 +2,7 @@
 
 var request = require('request');
 var parseArgs = require('minimist');
+var moment = require('moment');
 
 var args = parseArgs(process.argv);
 var username = args._[2];
@@ -64,7 +65,7 @@ function makeItPretty(ugly) {
     for (var j = 0; j < ugly.data.length; j++) {
         outString = outString + "\n" 
             + getSymbol(ugly.data[j].event)
-            + "\t" + ugly.data[j].time 
+            + "\t" + beerGoggles(ugly.data[j].time) 
             + "\t" + ugly.data[j].login 
             + makeGoodEnglish(ugly.data[j].event)
             + ugly.data[j].repo + "\n";
@@ -90,6 +91,6 @@ function makeGoodEnglish(event) {
 }
 
 function beerGoggles(uglyDate) {
-    var prettyDate = "";
+    var prettyDate = moment(uglyDate, "YYYY[-]MM[-]DD[T]h[:]mm[:]ss[Z]").fromNow();
     return prettyDate;
 }
