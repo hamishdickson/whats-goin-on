@@ -75,7 +75,7 @@ function makeItPretty(ugly) {
 }
 
 function getSymbol(event) {
-    if (event == 'Watch') return '⊙';
+    if (event == 'Watch') return 'w';
     if (event == 'Push') return '=>';
     if (event == 'Create') return '+';
     if (event == 'Fork') return '-<';
