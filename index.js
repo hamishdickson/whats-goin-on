@@ -8,10 +8,11 @@ var args = parseArgs(process.argv);
 var username = args._[2];
 var numberOfRecords = 10;
 
-var arg3 = args.n;
+var argN = args.n;
+var argC = args.c;
 
-if (arg3 !== undefined) {
-    numberOfRecords = arg3;
+if (argN !== undefined) {
+    numberOfRecords = argN;
 } else {
     numberOfRecords = 10;
 }
@@ -52,7 +53,8 @@ function getEvents(inData) {
             "login": jsonData[i].actor.login,
             "event": jsonData[i].type.replace('Event', ''),
             "repo": jsonData[i].repo.name,
-            "time": jsonData[i].created_at
+            "time": jsonData[i].created_at,
+            "commits": jsonData[i].payload.commits
         };
     }
     
@@ -69,6 +71,12 @@ function makeItPretty(ugly) {
             "\t" + ugly.data[j].login +
             makeGoodEnglish(ugly.data[j].event) +
             ugly.data[j].repo + "\n";
+
+        if (argC !== undefined && ugly.data[j].commits !== undefined) {
+            for (var k = 0; k < ugly.data[j].commits.length; k++) {
+                outString = outString + "\t\t" + ugly.data[j].commits[k].message + "\n";
+            }
+        }
     }
 
     return outString;
